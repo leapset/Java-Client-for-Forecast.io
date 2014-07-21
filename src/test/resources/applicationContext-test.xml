@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <import resource="applicationContext-service.xml"/>
+
+    <bean id="forecastWeatherService"
+          class="com.leapset.forecastio.service.impl.ForecastWeatherServiceImpl">
+        <constructor-arg value="${forecast.accessToken}"/>
+    </bean>
+
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+            <list>
+                <value>classpath:weatherApps.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <!-- injecting properties files -->
+    <util:properties id="weatherAppsProperties" location="classpath:weatherApps.properties"/>
+
+</beans>
