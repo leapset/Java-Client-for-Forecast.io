@@ -2,32 +2,7 @@
 The Forecast-IO Java Client provides a simple API for [v2 Forecast API][] service.
 
 ## Get it!
-### Maven
-Functionality of this package is contained in Java package `com.leapset.forecast-io-java-client`, and can be used using following Maven dependency:
 
-```xml
-<repository>
-    <id>leapset.snapshot.repository</id>
-    <name>Archiva Managed Leapset SNAPSHOT Repository</name>
-    <url>http://repo.leapset.com/archiva/repository/internal/</url>
-</repository>
-```
-
-```xml
-<dependency>
-  <groupId>com.leapset</groupId>
-  <artifactId>forecast-io-java-client</artifactId>
-  <version>1.0.0</version>
-</dependency>
-```
-## Use it!
-Set the Forecast IO access token as constructor argument.
-```
-<bean id="forecastWeatherService"
-          class="com.leapset.forecastio.service.impl.ForecastWeatherServiceImpl">
-    <constructor-arg value="${forecast.accessToken}"/>
-</bean>
-```
 ## Building from Source
 The Forecast-IO Client uses a [maven][]-based build system.
 
